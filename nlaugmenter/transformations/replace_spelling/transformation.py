@@ -12,8 +12,8 @@ Base Class for implementing the different input transformations a generation sho
 
 def generate_sentence(sentence, spell_errors, prob_of_typo, seed):
     output = []
+    random.seed(seed)
     for word in sentence.split():
-        random.seed(seed)
         if (
             word.lower() in list(spell_errors.keys())
             and random.choice(range(0, 100)) <= prob_of_typo
@@ -51,13 +51,14 @@ class SpellingTransformation(SentenceOperation):
     ]
     languages = ["en"]
 
-    def __init__(self, seed=0, max_outputs=3):
+    def __init__(self, prob=0.2, seed=0, max_outputs=3):
         super().__init__(seed, max_outputs=max_outputs)
+        self.prob = prob
 
     def generate(self, sentence: str):
         perturbed_texts = generate_sentences(
             text=sentence,
-            prob=0.20,
+            prob=self.prob,
             seed=self.seed,
             max_outputs=self.max_outputs,
         )

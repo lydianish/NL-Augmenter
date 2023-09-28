@@ -61,8 +61,10 @@ class WhitespacePerturbation(SentenceOperation):
         "vi",
     ]
 
-    def __init__(self, seed=0, max_outputs=1):
+    def __init__(self, remove_prob=0.1, add_prob=0.05, seed=0, max_outputs=1):
         super().__init__(seed, max_outputs=max_outputs)
+        self.remove_prob=remove_prob 
+        self.add_prob=add_prob
 
     def generate(self, sentence: str):
         random.seed(self.seed)
@@ -72,7 +74,7 @@ class WhitespacePerturbation(SentenceOperation):
             for char in sentence:
                 random_num = random.random()
                 perturbed_text += whitespace(
-                    char, random_num, remove_prob=0.1, add_prob=0.05
+                    char, random_num, remove_prob=self.remove_prob, add_prob=self.add_prob
                 )
             perturbed_texts.append("".join(perturbed_text))
         return perturbed_texts

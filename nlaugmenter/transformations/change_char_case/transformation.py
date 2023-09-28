@@ -35,13 +35,14 @@ class ChangeCharCase(SentenceOperation):
     languages = ["en"]
     keywords = ["morphological", "noise", "rule-based", "high-coverage"]
 
-    def __init__(self, seed=0, max_outputs=1):
+    def __init__(self, prob=0.1, seed=0, max_outputs=1):
         super().__init__(seed, max_outputs=max_outputs)
+        self.prob = prob
 
     def generate(self, sentence: str):
         perturbed = change_char_case(
             text=sentence,
-            prob=0.1,
+            prob=self.prob,
             seed=self.seed,
             max_outputs=self.max_outputs,
         )

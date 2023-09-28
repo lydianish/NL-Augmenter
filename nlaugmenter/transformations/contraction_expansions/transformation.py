@@ -119,9 +119,10 @@ class ContractionExpansions(SentenceOperation):
             match = possible.group(1)
             first_char = match[0]
             expanded_contraction = self.reverse_contraction_map.get(
-                match, self.reverse_contraction_map.get(match.lower())
+                match, self.reverse_contraction_map.get(match.lower(), match)
             )
             expanded_contraction = first_char + expanded_contraction[1:] + " "
+
             return expanded_contraction
 
         return reverse_contraction_pattern.sub(cont, sentence)
@@ -147,7 +148,7 @@ class ContractionExpansions(SentenceOperation):
             match = contraction.group(0)
             first_char = match[0]
             expanded_contraction = self.contraction_map.get(
-                match, self.contraction_map.get(match.lower())
+                match, self.contraction_map.get(match.lower(), match)
             )
             expanded_contraction = first_char + expanded_contraction[1:]
             return expanded_contraction

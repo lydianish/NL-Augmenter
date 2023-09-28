@@ -57,15 +57,16 @@ class CloseHomophonesSwap(SentenceOperation):
         "unnaturally-written",
     ]
 
-    def __init__(self, seed=0, max_outputs=1):
+    def __init__(self, corrupt_prob=0.5, seed=0, max_outputs=1):
         super().__init__(seed)
+        self.corrupt_prob = corrupt_prob
         self.max_outputs = max_outputs
         self.nlp = spacy_nlp if spacy_nlp else spacy.load("en_core_web_sm")
 
     def generate(self, sentence: str):
         perturbed_texts = close_homophones_swap(
             text=sentence,
-            corrupt_prob=0.5,
+            corrupt_prob=self.corrupt_prob,
             seed=self.seed,
             max_outputs=self.max_outputs,
             nlp=self.nlp,

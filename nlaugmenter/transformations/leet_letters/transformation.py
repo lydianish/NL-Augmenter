@@ -63,6 +63,7 @@ class LeetLetters(SentenceOperation):
         random.seed(self.seed)
         max_leet_replacements = int(self.max_leet * len(sentence))
         perturbed_texts = []
+
         # Perturb the input sentence max_output times
         for _ in itertools.repeat(None, self.max_outputs):
             # Determine what to replace
@@ -70,9 +71,12 @@ class LeetLetters(SentenceOperation):
             for idx, letter in enumerate(sentence):
                 if letter in leet_letter_mappings:
                     leet_candidates.append((idx, leet_letter_mappings[letter]))
-            leet_replacements = random.choices(
-                leet_candidates, k=max_leet_replacements
-            )
+            if not leet_candidates:
+                leet_replacements = []
+            else:
+                leet_replacements = random.choices(
+                    leet_candidates, k=max_leet_replacements
+                )
 
             # Conduct replacement
             sentence_list = list(sentence)
