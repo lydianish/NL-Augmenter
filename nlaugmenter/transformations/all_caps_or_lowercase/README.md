@@ -1,4 +1,4 @@
-# Changing text to all capital or all lowercase letters
+# Changing text to all caps or all lowercase letters
 
 Author name: Lydia Nishimwe \
 Author email: lydia.nishimwe@inria.fr \

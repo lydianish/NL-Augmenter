@@ -13,7 +13,7 @@ class AllCapsOrLowerTransformation(SentenceOperation):
     def generate(self, sentence: str):
         random.seed(self.seed)
         outputs = []
-        for i in range(self.max_outputs):
+        for _ in range(self.max_outputs):
             if random.random() > 0.5:
                 outputs.append(sentence.upper())
             else:
