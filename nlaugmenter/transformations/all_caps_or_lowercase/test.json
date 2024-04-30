@@ -1,0 +1,13 @@
+{
+  "type": "all_caps_or_lowercase",
+  "test_cases": [
+    {"class": "AllCapsOrLowerTransformation",
+      "inputs": {
+        "sentence": "See you tomorrow."
+      },
+      "outputs": [{
+        "sentence": "SEE YOU TOMORROW."
+      }]
+    }
+  ]
+}
