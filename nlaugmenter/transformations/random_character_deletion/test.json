@@ -1,13 +1,18 @@
 {
-  "type": "all_caps_or_lowercase",
+  "type": "random_character_deletion",
   "test_cases": [
-    {"class": "AllCapsOrLowerTransformation",
+    {"class": "RandomCharacterDeletion",
+      "args": { "seed": 0, "max_outputs": 5, "prob": 0.1 },
       "inputs": {
         "sentence": "See you tomorrow."
       },
-      "outputs": [{
-        "sentence": "See you tomorow."
-      }]
+      "outputs": [
+        {"sentence": "See you tomorr"},
+        {"sentence": "See you tomorrow."},
+        {"sentence": "ee you tmorrow."},
+        {"sentence": "See you tomorrow"},
+        {"sentence": "Se youtomorrw."}
+      ]
     }
   ]
 }

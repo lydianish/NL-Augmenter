@@ -1,13 +1,18 @@
 {
   "type": "all_caps_or_lowercase",
   "test_cases": [
-    {"class": "AllCapsOrLowerTransformation",
+    {"class": "AllCapsOrLowercase",
+      "args": { "seed": 0, "max_outputs": 5 },
       "inputs": {
         "sentence": "See you tomorrow."
       },
-      "outputs": [{
-        "sentence": "SEE YOU TOMORROW."
-      }]
+      "outputs": [
+        {"sentence": "SEE YOU TOMORROW."},
+        {"sentence": "SEE YOU TOMORROW."},
+        {"sentence": "see you tomorrow."},
+        {"sentence": "see you tomorrow."},
+        {"sentence": "SEE YOU TOMORROW."}
+      ]
     }
   ]
 }

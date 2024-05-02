@@ -3,7 +3,7 @@ import random
 from nlaugmenter.interfaces.SentenceOperation import SentenceOperation
 from nlaugmenter.tasks.TaskTypes import TaskType
 
-class AllCapsOrLowerTransformation(SentenceOperation):
+class AllCapsOrLowercase(SentenceOperation):
     tasks = [TaskType.TEXT_CLASSIFICATION, TaskType.TEXT_TO_TEXT_GENERATION]
     languages = ["All"]
 

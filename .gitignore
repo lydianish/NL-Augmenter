@@ -19,3 +19,4 @@ draft.ipynb
 nlaugment-flores.py
 nlaugment-oscar.py
 nlaugmenter.egg-info/
+.vector_cache/

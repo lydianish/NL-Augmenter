@@ -1,7 +1,13 @@
-import random
+import numpy as np
 
 from nlaugmenter.interfaces.SentenceOperation import SentenceOperation
 from nlaugmenter.tasks.TaskTypes import TaskType
+
+def delete_random_characters(sentence: str, prob: float):
+    if len(sentence) > 1:
+        indices = np.random.choice([True, False], size=len(sentence), p=[prob, 1-prob])
+        return ''.join(np.array(list(sentence))[~indices])
+    return sentence
 
 class RandomCharacterDeletion(SentenceOperation):
     tasks = [TaskType.TEXT_CLASSIFICATION, TaskType.TEXT_TO_TEXT_GENERATION]
@@ -11,18 +17,10 @@ class RandomCharacterDeletion(SentenceOperation):
         super().__init__(seed=seed, max_outputs=max_outputs)
         self.prob = prob
     
-    def select_n_indices(self, n, n_max):
-        indices = set()
-        while len(indices) < n:
-            indices.add(random.randint(0, n_max-1))
-        return indices
-
     def generate(self, sentence: str):
-        random.seed(self.seed)
+        np.random.seed(self.seed)
         outputs = []
-        chars_to_delete = int(len(sentence) * self.prob)
         for _ in range(self.max_outputs):
-            indices = self.select_n_indices(chars_to_delete, len(sentence))
-            perturbed_sentence = [ char for i, char in enumerate(sentence) if i not in indices ]
-            outputs.append(''.join(perturbed_sentence))
+            perturbed_sentence = delete_random_characters(sentence, self.prob)
+            outputs.append(perturbed_sentence)
         return outputs
