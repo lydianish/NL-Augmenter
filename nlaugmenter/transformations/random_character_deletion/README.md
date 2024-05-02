@@ -26,7 +26,7 @@ text generation, etc.
 
 ## Evaluation
 
-Evaluating impact on the performance of RoBERTa (textattack/roberta-base-imdb) on the IMDB dataset (20% test split):
+The impact on the performance of RoBERTa (textattack/roberta-base-imdb) on the IMDB dataset (20% test split):
 
 | Data perturbation level | Accuracy drop |
 |---|---|
