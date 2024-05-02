@@ -21,7 +21,7 @@ def delete_random_vowels(sentence: str, prob: float):
 class DevowellingWords(SentenceOperation):
     tasks = [TaskType.TEXT_CLASSIFICATION, TaskType.TEXT_TO_TEXT_GENERATION]
     languages = ["en"]
-    keywords = ["lexical", "rule-based", "unnaturally-written"]
+    keywords = ["morphological", "rule-based", "unnaturally-written"]
 
     def __init__(self, seed=0, max_outputs=1, prob=1):
         super().__init__(seed=seed, max_outputs=max_outputs)
