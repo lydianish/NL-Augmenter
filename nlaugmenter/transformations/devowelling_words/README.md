@@ -6,7 +6,7 @@ Author Affiliation: [ALMAnaCH lab, Inria](https://files.inria.fr/almanach/index-
 
 ## What type of transformation is this?
 
-This perturbation randomly selects words from a sentence (with a probability p) and devowels them by removing all their vowels (a, e, i ,o, u), except for one that's at the beginning of the word, *e.g. alright -> alrght.*
+This perturbation randomly selects words from a sentence (with a probability p) and devowels them by removing all their vowels (a, e, i ,o, u), except for one that's at the beginning of the word, e.g. `alright` -> `alrght`.
 
 Example:
 ```python
@@ -26,7 +26,7 @@ text generation, etc.
 
 ## Evaluation
 
-The impact on the performance of RoBERTa (textattack/roberta-base-imdb) on the IMDB dataset (20% test split):
+The impact on the performance of RoBERTa (`textattack/roberta-base-imdb`) on the IMDB dataset (20% test split):
 
 | Data perturbation level | Accuracy drop |
 |---|---|
@@ -38,5 +38,5 @@ The impact on the performance of RoBERTa (textattack/roberta-base-imdb) on the I
 ## What are the limitations of this transformation?
 
 Removing all the vowels of a word except for the first one is a simple approach. In practice, people might use a more sophisticated way to devowel, for example:
-- not devowelling a word that has mostly vowels because it will become unintelligible (e.g. *India -> nd*)
-- only removing some of the vowels to avoid having a sequence of too many consonants (e.g. *international* -> *internatnl* instead of *intrntnl*).
+- not devowelling a word that has mostly vowels because it will become unintelligible (e.g. `India` -> `nd`)
+- only removing some of the vowels to avoid having a sequence of too many consonants (e.g. `international` -> `internatnl` instead of `intrntnl`).
