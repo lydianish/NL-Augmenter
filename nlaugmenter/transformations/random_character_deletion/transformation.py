@@ -12,6 +12,7 @@ def delete_random_characters(sentence: str, prob: float):
 class RandomCharacterDeletion(SentenceOperation):
     tasks = [TaskType.TEXT_CLASSIFICATION, TaskType.TEXT_TO_TEXT_GENERATION]
     languages = ["All"]
+    keywords = ["noise", "rule-based", "possible-meaning-alteration"]
 
     def __init__(self, seed=0, max_outputs=1, prob=0.1):
         super().__init__(seed=seed, max_outputs=max_outputs)
