@@ -1,0 +1,18 @@
+{
+  "type": "devowel_words",
+  "test_cases": [
+    {"class": "DevowelWords",
+      "args": { "seed": 0, "max_outputs": 5, "prob": 0.5 },
+      "inputs": {
+        "sentence": "This is a sentence in which some words have been devowelled."
+      },
+      "outputs": [
+        {"sentence": "This is a sentence in which sm words have bn devowelled."},
+        {"sentence": "This is a sntnc in whch some words have been devowelled."},
+        {"sentence": "Ths is a sentence in which some wrds hv been dvwlld."},
+        {"sentence": "This is a sentence in which some wrds hv been dvwlld."},
+        {"sentence": "This is a sntnc in whch some wrds have bn dvwlld."}
+      ]
+    }
+  ]
+}
