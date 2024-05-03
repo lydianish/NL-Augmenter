@@ -10,7 +10,7 @@ This transformation takes a sentence and changes all its characters to either up
 
 Example:
 ```python
->>> trans = AllCapsOrLowerTransformation(seed=0, max_outputs=5)
+>>> trans = AllCapsOrLowercase(seed=0, max_outputs=5)
 >>> trans.generate('See you tomorrow.')
 >>> ['SEE YOU TOMORROW.',
  'SEE YOU TOMORROW.',
