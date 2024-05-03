@@ -6,7 +6,7 @@ from nlaugmenter.tasks.TaskTypes import TaskType
 def is_vowel(c: str):
     return c.lower() in ['a', 'e', 'i', 'o', 'u']
 
-def delete_random_vowels(sentence: str, prob: float):
+def delete_vowels_from_words(sentence: str, prob: float):
     words = sentence.split()
     new_words = []
     for word in words:
@@ -18,7 +18,7 @@ def delete_random_vowels(sentence: str, prob: float):
             new_words.append(word)
     return ' '.join(new_words)
 
-class DevowellingWords(SentenceOperation):
+class DevowelWords(SentenceOperation):
     tasks = [TaskType.TEXT_CLASSIFICATION, TaskType.TEXT_TO_TEXT_GENERATION]
     languages = ["en"]
     keywords = ["morphological", "rule-based", "unnaturally-written"]
@@ -31,6 +31,6 @@ class DevowellingWords(SentenceOperation):
         np.random.seed(self.seed)
         outputs = []
         for _ in range(self.max_outputs):
-            perturbed_sentence = delete_random_vowels(sentence, self.prob)
+            perturbed_sentence = delete_vowels_from_words(sentence, self.prob)
             outputs.append(perturbed_sentence)
         return outputs
