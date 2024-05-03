@@ -6,7 +6,7 @@ Author Affiliation: [ALMAnaCH lab, Inria](https://files.inria.fr/almanach/index-
 
 ## What type of transformation is this?
 
-This perturbation randomly selects words from a sentence (with a probability p) and devowels them by removing all their vowels (a, e, i ,o, u), except for one that's at the beginning of the word, e.g. `alright` -> `alrght`.
+This perturbation randomly selects words from a sentence (with a probability `prob`) and devowels them by removing all their vowels (a, e, i ,o, u), except for one that's at the beginning of the word, e.g. `alright` -> `alrght`.
 
 Example:
 ```python
