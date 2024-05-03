@@ -10,7 +10,7 @@ This perturbation randomly selects words from a sentence (with a probability p) 
 
 Example:
 ```python
->>> trans = DevowellingWords(seed=0, max_outputs=5, prob=0.5)
+>>> trans = DevowelWords(seed=0, max_outputs=5, prob=0.5)
 >>> trans.generate('This is a sentence in which some words have been devowelled.')
 >>> ['This is a sentence in which sm words have bn devowelled.',
  'This is a sntnc in whch some words have been devowelled.',
