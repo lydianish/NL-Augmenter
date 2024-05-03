@@ -1,17 +1,43 @@
 {
-  "type": "random_character_deletion",
+  "type": "character_repetition",
   "test_cases": [
-    {"class": "RandomCharacterDeletion",
-      "args": { "seed": 0, "max_outputs": 5, "prob": 0.1 },
+    {"class": "CharacterRepetition",
+      "args": { "seed": 0, "max_outputs": 5, "prob_rep": 0.5, "n_rep": 3 },
       "inputs": {
         "sentence": "See you tomorrow."
       },
       "outputs": [
-        {"sentence": "See you tomorr"},
-        {"sentence": "See you tomorrow."},
-        {"sentence": "ee you tmorrow."},
-        {"sentence": "See you tomorrow"},
-        {"sentence": "Se youtomorrw."}
+        {"sentence": "See yoooooou tomorrowww...."},
+        {"sentence": "See you ttomorrrrroww.."},
+        {"sentence": "Seeeeee yyou tomooorroooow...."},
+        {"sentence": "Seeeeeeee you ttttooooomoooorrowww...."},
+        {"sentence": "Seeeeeee ouuu ttttomorrroww..."}
+      ]
+    },
+    {"class": "CharacterRepetition",
+      "args": { "seed": 0, "max_outputs": 5, "prob_rep": 0.5, "n_rep": 3 },
+      "inputs": {
+        "sentence": "That's so cool!"
+      },
+      "outputs": [
+        {"sentence": "That'ssssss so cool!!!!"},
+        {"sentence": "Thhhhat's so coool!"},
+        {"sentence": "TTTThhatt'sss sooo coool!!"},
+        {"sentence": "Thaaat's sssso coooooool!!!!!!!"},
+        {"sentence": "Thhhat's so coooooool!!!"}
+      ]
+    },
+    {"class": "CharacterRepetition",
+      "args": { "seed": 0, "max_outputs": 5, "prob_rep": 0.5, "n_rep": 3 },
+      "inputs": {
+        "sentence": "What were you thinking?!"
+      },
+      "outputs": [
+        {"sentence": "What wwwwwwere you thiiinkiiiing?????!"},
+        {"sentence": "Whaaatt weerrre yyyouu thinkiiing!!!!"},
+        {"sentence": "Whatttttt were you thiiiinnnnnkiiiing???!!!!"},
+        {"sentence": "Whhhhaaa weeerrrre youu thiinnnkiiiiinnnng???!!!!!"},
+        {"sentence": "Whhhat wweerrrrre you ttttthhhhhhhinkkiiingg??!!!!!!"}
       ]
     }
   ]
