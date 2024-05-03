@@ -6,7 +6,7 @@ Author Affiliation: [ALMAnaCH lab, Inria](https://files.inria.fr/almanach/index-
 
 ## What type of transformation is this?
 
-This perturbation randomly deletes characters from a string of length > 1 (sentence or paragraph) with a probability p.
+This perturbation randomly deletes characters from a string of length > 1 with a probability `prob`.
 
 Example:
 ```python
