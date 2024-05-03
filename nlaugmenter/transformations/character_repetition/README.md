@@ -38,7 +38,7 @@ The impact on the performance of RoBERTa (`textattack/roberta-base-imdb`) on the
 | p = 0.15 | 95.0 -> 87.0 (-8.0) |
 | p = 0.20 | 95.0 -> 85.0 (-10.0) |
 
-## Related Work
+## Related work
 
 This perturbation performs two of the phenomena of marks of expressiveness in UGC described by Seddah et al. (2012):
 1. Punctuation transgression: the overuse of strong punctuation marks, and
