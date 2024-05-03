@@ -33,10 +33,10 @@ The impact on the performance of RoBERTa (`textattack/roberta-base-imdb`) on the
 
 | Data perturbation level | Accuracy drop |
 |---|---|
-| p = 0.05 | 95.0 -> 94.0 (-1.0) |
-| p = 0.10 | 95.0 -> 91.0 (-4.0) |
-| p = 0.15 | 95.0 -> 87.0 (-8.0) |
-| p = 0.20 | 95.0 -> 85.0 (-10.0) |
+| p = 0.05 | 95.0 -> 92.0 (-3.0) |
+| p = 0.10 | 95.0 -> 90.0 (-5.0) |
+| p = 0.15 | 95.0 -> 84.0 (-11.0) |
+| p = 0.20 | 95.0 -> 81.0 (-14.0) |
 
 ## Related work
 
