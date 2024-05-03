@@ -1,7 +1,7 @@
 {
-  "type": "devowelling_words",
+  "type": "devowel_words",
   "test_cases": [
-    {"class": "DevowellingWords",
+    {"class": "DevowelWords",
       "args": { "seed": 0, "max_outputs": 5, "prob": 0.5 },
       "inputs": {
         "sentence": "This is a sentence in which some words have been devowelled."
