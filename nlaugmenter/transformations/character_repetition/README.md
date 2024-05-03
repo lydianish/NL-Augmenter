@@ -1,4 +1,4 @@
-# Random Character Deletion
+# Character Repetition
 
 Author name: Lydia Nishimwe \
 Author email: lydia.nishimwe@inria.fr \
@@ -6,17 +6,20 @@ Author Affiliation: [ALMAnaCH lab, Inria](https://files.inria.fr/almanach/index-
 
 ## What type of transformation is this?
 
-This perturbation randomly deletes characters from a string of length > 1 (sentence or paragraph) with a probability p.
+This perturbation tries to emulate some of the expressiveness of user-generated content by repeating characters. 
+*All* sentence-ending punctuation (.?!) are repeated, while letters are selected for repetition with a probability `p_rep`. 
+Digits, whitespace, and other punctuation and characters are not repeated.
+The number of repetitions for a selected character is sampled from a Poisson distribution of parameter `n_rep`.
 
 Example:
 ```python
->>> trans = RandomCharacterDeletion(seed=0, max_outputs=5, prob=0.1)
->>> trans.generate('See you tomorrow.')
->>> ['See you tomorow.',
- 'See you tomorow.',
- 'Se you tomorrow.',
- 'See you omorrow.',
- 'See you tomorrow']
+>>> trans = CharacterRepetion(seed=0, max_outputs=5, prob_rep=0.5, n_rep=3)
+>>> trans.generate('That's so cool!')
+>>> ['That'ssssss so cool!!!!',
+ 'Thhhhat's so coool!',
+ 'TTTThhatt'sss sooo coool!!',
+ 'Thaaat's sssso coooooool!!!!!!!',
+ 'Thhhat's so coooooool!!!']
 ```
 
 ## What tasks does it intend to benefit?
