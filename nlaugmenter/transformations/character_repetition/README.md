@@ -67,4 +67,4 @@ Citation:
 
 ## What are the limitations of this transformation?
 
-If the probability p is set too high, deleting characters can result in deleting whole words, which can alter the meaning of the sentence, e.g. negations.
+Repeating all full stops will affect those that mark abbreviations (e.g. `3 p.m.` -> `3 p....m...`), which people tend not to do.
