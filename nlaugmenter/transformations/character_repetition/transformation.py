@@ -15,7 +15,7 @@ class CharacterRepetition(SentenceOperation):
     languages = ["en"]
     keywords = ["noise", "rule-based", "unnaturally-written"]
 
-    def __init__(self, seed=0, max_outputs=1, prob_rep=0.05, n_rep=3):
+    def __init__(self, seed=0, max_outputs=1, prob_rep=0.1, n_rep=3):
         super().__init__(seed=seed, max_outputs=max_outputs)
         self.prob_rep = prob_rep
         self.n_rep = n_rep
