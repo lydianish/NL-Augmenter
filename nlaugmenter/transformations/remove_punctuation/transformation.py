@@ -31,7 +31,6 @@ class RemovePunctuation(SentenceOperation):
     def __init__(self, seed=0, max_outputs=1, prob=1):
         super().__init__(seed=seed, max_outputs=max_outputs)
         self.prob = prob
-        print(f"RemovePunctuation initialized with seed {seed}, max_outputs {max_outputs}, prob {prob}")
         
     def generate(self, sentence: str):
         np.random.seed(self.seed)
