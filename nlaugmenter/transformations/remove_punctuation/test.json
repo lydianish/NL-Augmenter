@@ -1,0 +1,18 @@
+{
+  "type": "remove_punctuation",
+  "test_cases": [
+    {"class": "RemovePunctuation",
+      "args": { "seed": 0, "max_outputs": 5, "prob": 0.5 },
+      "inputs": {
+        "sentence": "Hello, world!!!! This is a test sentence with punctuation: commas, periods, exclamation marks!..."
+      },
+      "outputs": [
+        {"sentence": "Hello, world!!! This is a test sentence with punctuation: commas periods, exclamation marks!.."},
+        {"sentence": "Hello, world! This is a test sentence with punctuation: commas, periods, exclamation marks!.."},
+        {"sentence": "Hello world!!! This is a test sentence with punctuation commas periods, exclamation marks.."},
+        {"sentence": "Hello, world!!! This is a test sentence with punctuation commas, periods exclamation marks!."},
+        {"sentence": "Hello world!! This is a test sentence with punctuation commas periods exclamation marks!"}
+      ]
+    }
+  ]
+}
